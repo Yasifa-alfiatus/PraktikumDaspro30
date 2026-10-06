@@ -27,7 +27,36 @@ public class StudiKasus230 {
                         System.out.print("Peringkat : ");
                         peringkat = input.nextInt();
 
-                   
+                        if (peringkat >= 1 && peringkat <= 3) {
+                            if (jumlahDokumen == 4) {
+                                System.out.println("Status: berhak memperoleh dana penghargaan");
+                            } else {
+                                int kurang = 4 - jumlahDokumen;
+                                System.out.println("Status: tidak lengkap, (kurang " + kurang + " dokumen) Dana Penghargaan tidak diberikan");
+                            }
+                        } else {
+                            System.out.println("Status: tidak memperoleh dana penghargaan");
+                        }
+
+                    } else if (jenis.equalsIgnoreCase("PKM")) {
+                        System.out.print("Jumlah Dokumen : ");
+                        jumlahDokumen = input.nextInt();
+
+                        System.out.print("Status Pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+                        statusPendanaan = input.nextInt();
+
+                        if (statusPendanaan == 1) {
+                            if (jumlahDokumen == 4) {
+                                System.out.println("Status: berhak memperoleh dana penghargaan");
+                            } else {
+                                int kurang = 4 - jumlahDokumen;
+                                System.out.println("Status: tidak lengkap, (kurang " + kurang + " dokumen) Dana Penghargaan tidak diberikan");
+                            }
+                        } else {
+                            System.out.println("Status: tidak memperoleh dana penghargaan");
+                        }
+
+                        input.close();
                     }
                 }
             }
